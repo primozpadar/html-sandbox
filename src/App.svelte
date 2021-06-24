@@ -20,18 +20,16 @@
   };
 </script>
 
-<main>
-  <Toolbar on:save={saveHandler} />
-  <MonacoEditor language="html" on:change={changeHandler} />
-  <Colors />
-  <iframe
-    bind:this={codeFrame}
-    seamless={true}
-    frameborder="0"
-    title="renderer"
-    id="renderer"
-  />
-</main>
+<Toolbar on:save={saveHandler} />
+<MonacoEditor language="html" on:change={changeHandler} />
+<Colors />
+<iframe
+  bind:this={codeFrame}
+  seamless={true}
+  frameborder="0"
+  title="renderer"
+  id="renderer"
+/>
 
 <style lang="scss">
   :root {
@@ -54,7 +52,7 @@
     font-family: sans-serif;
   }
 
-  main {
+  :global(#app) {
     overflow: hidden;
     height: 100vh;
     width: 100vw;
